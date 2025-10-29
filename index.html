@@ -1,35 +1,185 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ElectroHub</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroHub | Tecnología al mejor precio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="pages/categoria1.html">Celulares</a> |
-        <a href="pages/categoria2.html">Notebooks</a> |
-        <a href="pages/categoria3.html">Accesorios</a> |
-        <a href="pages/login.html">Login</a> |
-        <a href="pages/register.html">Registro</a> |
-        <a href="#">Logout</a> |
-        <a href="pages/contacto.html">Contacto</a>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary fs-4" href="index.html">⚡ ElectroHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <h1>Bienvenido a Tienda Electrónica</h1>
-    <p>Explora nuestros productos: celulares, notebooks y accesorios de última generación.</p>
-    <script src="" async defer></script>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/categoria-celulares.html">Celulares</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/categoria-notebooks.html">Notebooks</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/categoria-accesorios.html">Accesorios</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-primary rounded-pill px-4" href="/pages/login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero d-flex align-items-center justify-content-center text-center">
+  <div class="hero-content text-light">
+    <h1 class="fw-bold display-5 mb-3">La mejor tecnología al mejor precio</h1>
+    <p class="lead">Celulares, notebooks y accesorios con envío a todo el país</p>
+    <a href="#productos" class="btn btn-light btn-lg mt-4 shadow-sm px-5 rounded-pill fw-semibold">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <i class="bi bi-truck fs-1 text-primary"></i>
+          <h5 class="mt-3 fw-semibold">Envíos a todo el país</h5>
+          <p class="text-muted small">Recibí tu compra sin moverte de tu casa</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-credit-card fs-1 text-primary"></i>
+          <h5 class="mt-3 fw-semibold">Pagá en cuotas</h5>
+          <p class="text-muted small">Hasta 12 cuotas sin interés con tarjetas seleccionadas</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-shield-check fs-1 text-primary"></i>
+          <h5 class="mt-3 fw-semibold">Garantía asegurada</h5>
+          <p class="text-muted small">Todos nuestros productos cuentan con garantía oficial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section id="productos" class="container my-5 py-4">
+    <h2 class="text-center mb-5 fw-bold text-primary">Productos destacados</h2>
+    <div class="row g-4">
+      <!-- CARD 1 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="/images/celularSamsung.avif" class="card-img-top" alt="Celular Samsung">
+          <div class="card-body text-center">
+            <h5 class="card-title">Smartphone Samsung</h5>
+            <p class="text-muted fs-5 fw-semibold">$250.000</p>
+            <a href="/pages/categoria-celulares.html" class="btn btn-outline-primary rounded-pill px-4">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD 2 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="/images/notebook.webp" class="card-img-top" alt="Notebook Lenovo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Notebook Lenovo</h5>
+            <p class="text-muted fs-5 fw-semibold">$800.000</p>
+            <a href="/pages/categoria-notebooks.html" class="btn btn-outline-primary rounded-pill px-4">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD 3 -->
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="/images/auricularBlanco.webp" class="card-img-top" alt="Auriculares Bluetooth">
+          <div class="card-body text-center">
+            <h5 class="card-title">Auriculares Bluetooth</h5>
+            <p class="text-muted fs-5 fw-semibold">$50.000</p>
+            <a href="/pages/categoria-accesorios.html" class="btn btn-outline-primary rounded-pill px-4">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS (CARRUSEL) -->
+<section class="testimonios py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary mb-5">Lo que dicen nuestros clientes</h2>
+
+    <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+
+        <!-- Testimonio 1 -->
+<div class="carousel-item active">
+  <div class="testimonio-card mx-auto p-4 shadow-sm text-center">
+    <img src="/images/mujer1.webp" alt="Cliente mujer1" class="rounded-circle mb-3 mx-auto d-block">
+    <p class="fst-italic text-muted">“Excelente atención y entrega rapidísima. Compré mi notebook y llegó en 2 días, impecable.”</p>
+    <h6 class="fw-bold mt-3 mb-0 text-primary">María López</h6>
+    <small class="text-secondary">Buenos Aires</small>
+  </div>
+</div>
+
+<!-- Testimonio 2 -->
+<div class="carousel-item">
+  <div class="testimonio-card mx-auto p-4 shadow-sm text-center">
+    <img src="/images/hombre1.webp" alt="Cliente hombre1" class="rounded-circle mb-3 mx-auto d-block">
+    <p class="fst-italic text-muted">“Los precios son geniales y los productos de primera. Compré unos auriculares y suenan increíble.”</p>
+    <h6 class="fw-bold mt-3 mb-0 text-primary">Javier Martínez</h6>
+    <small class="text-secondary">Córdoba</small>
+  </div>
+</div>
+
+<!-- Testimonio 3 -->
+<div class="carousel-item">
+  <div class="testimonio-card mx-auto p-4 shadow-sm text-center">
+    <img src="/images/mujer2.webp" alt="Cliente mujer2" class="rounded-circle mb-3 mx-auto d-block">
+    <p class="fst-italic text-muted">“Muy buena experiencia de compra. Todo fácil, rápido y con excelente servicio postventa.”</p>
+    <h6 class="fw-bold mt-3 mb-0 text-primary">Lucía Fernández</h6>
+    <small class="text-secondary">Rosario</small>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- NEWSLETTER -->
+  <section class="bg-primary text-light py-5 text-center">
+    <div class="container">
+      <h3 class="fw-bold mb-3">¡Suscribite y recibí ofertas exclusivas!</h3>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control w-50 me-2 rounded-pill" placeholder="Tu email">
+        <button class="btn btn-light rounded-pill px-4 fw-semibold">Suscribirme</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 <strong>ElectroHub</strong>. Todos los derechos reservados.</p>
+      <small class="text-secondary">Desarrollado por Alan Giménez</small>
+      <div class="mt-2">
+        <a href="#" class="text-secondary me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-secondary me-3"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-secondary"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
