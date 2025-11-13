@@ -108,6 +108,15 @@ NAVBAR
   color: var(--color-primario) !important;
 }
 
+.navbar-invisible {
+  visibility: hidden;
+}
+
+.navbar-visible {
+  visibility: visible;
+}
+
+
 /* --------------------------
 HERO SECTION
 --------------------------- */
@@ -354,3 +363,4 @@ TESTIMONIOS (CARRUSEL)
     font-size: 1.6rem;
   }
 }
+
