@@ -51,6 +51,8 @@ Persistencia en localStorage
 
 Alertas de "Producto agregado"
 
+📌 Etapa 5 - Uso de Session y LocalStorage para la persistencia de datos necesaria del ecommerce
+
 🛠️ Tecnologías utilizadas
 
 HTML5
