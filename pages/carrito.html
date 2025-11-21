@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElectroHub - Accesorios</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+
+  <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- ICONS -->
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- TU CSS GENERAL -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-   <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary fs-4" href="../index.html">⚡ ElectroHub</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <div id="navbar-dinamico" class="ms-auto"></div>
+        <div id="navbar-dinamico" class="ms-auto navbar-invisible"></div>
       </div>
     </div>
   </nav>
 
-  <!-- CONTENIDO DE CATEGORÍA -->
-  <section class="container mt-5 pt-5">
-    <h2 class="text-center fw-bold mb-4">Categoría: Accesorios</h2>
+  <!-- 🔹 CONTENIDO DEL CARRITO -->
+  <div class="container mt-5">
 
-    <div class="row g-4" id="contenedor-productos"></div>
-  </section>
+    <h1 class="text-center mb-4">Mi Carrito</h1>
 
+    <!-- LISTA DE PRODUCTOS -->
+    <div id="cart-items" class="mb-4"></div>
+
+    <!-- TOTAL -->
+    <h3 class="text-end me-3">
+      Total: $<span id="total-price">0</span>
+    </h3>
+
+    <!-- BOTONES -->
+    <div class="text-end mt-3">
+      <button id="btn-clear-cart" class="btn btn-danger me-2">
+        <i class="bi bi-trash"></i> Vaciar Carrito
+      </button>
+
+      <button id="btn-checkout" class="btn btn-success">
+        <i class="bi bi-credit-card"></i> Finalizar Compra
+      </button>
+    </div>
+
+  </div>
   <!-- FOOTER -->
   <footer class="footer text-center py-4 mt-5">
     <div class="container">
@@ -44,10 +70,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPTS -->
+
+   <script src="../js/navbar.js"></script>
+  <script src="../js/carrito.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/navbar.js"></script>
-  <script src="../js/products.js"></script>
-  <script src="../js/accesorios.js"></script>
-  <!--<script src="./js/auth.js"></script>-->
 </body>
 </html>

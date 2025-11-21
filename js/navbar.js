@@ -9,6 +9,7 @@ const paginas = [
   { titulo: "Celulares", url: `${prefix}pages/categoria-celulares.html` },
   { titulo: "Notebooks", url: `${prefix}pages/categoria-notebooks.html` },
   { titulo: "Accesorios", url: `${prefix}pages/categoria-accesorios.html` },
+  { titulo: `<i class="bi bi-cart3"></i> Carrito`, url: `${prefix}pages/carrito.html` },
 ];
 
 function generarNavbar() {

@@ -1,59 +1,119 @@
-const productos = [
-  {
-    id: 1,
-    nombre: "Smartphone Samsung",
-    descripcion: "Pantalla AMOLED, cámara de alta resolución y gran batería.",
-    precio: 250000,
-    imagen: "./images/celularSamsung.avif"
-  },
-  {
-    id: 2,
-    nombre: "Notebook Lenovo",
-    descripcion: "Rendimiento rápido y diseño liviano para uso diario.",
-    precio: 800000,
-    imagen: "./images/notebook.webp"
-  },
-  {
-    id: 3,
-    nombre: "Auriculares Bluetooth",
-    descripcion: "Sonido envolvente y conexión inalámbrica estable.",
-    precio: 50000,
-    imagen: "./images/auricularBlanco.webp"
-  }
-];
+const contenedor = document.getElementById("contenedor-productos");
 
-function generarCards() {
-  const contenedor = document.getElementById("contenedor-productos");
+async function cargarProductosHome() {
+    try {
+        const res = await fetch("./data/productos.json");
+        const data = await res.json();
 
-  contenedor.innerHTML = productos
-    .map(
-      (producto) => `
-      <div class="col-12 col-md-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-          <div class="card-body text-center">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="text-muted">${producto.descripcion}</p>
-            <p class="fs-5 fw-semibold text-primary">$${producto.precio.toLocaleString()}</p>
+        // Tomamos 2 productos por categoría
+        const productosHome = [
+            ...data.celulares.slice(0, 2),
+            ...data.notebooks.slice(0, 2),
+            ...data.accesorios.slice(0, 2)
+        ];
 
-            <div class="d-flex justify-content-center align-items-center gap-3">
-              <button class="btn btn-outline-secondary btn-sm" onclick="cambiarCantidad(${producto.id}, -1)">-</button>
-              <span id="cantidad-${producto.id}">0</span>
-              <button class="btn btn-outline-secondary btn-sm" onclick="cambiarCantidad(${producto.id}, 1)">+</button>
+        renderizarProductos(productosHome);
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
+}
+
+function renderizarProductos(productos) {
+    contenedor.innerHTML = "";
+
+    productos.forEach(prod => {
+        const card = document.createElement("div");
+        card.classList.add("col-12", "col-md-4");
+
+        card.innerHTML = `
+            <div class="card h-100 shadow-sm">
+                <img src="${prod.imagen}" class="card-img-top" alt="${prod.titulo}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${prod.titulo}</h5>
+                    <p class="text-muted">${prod.descripcion}</p>
+                    <p class="fw-bold text-primary">$${prod.precio.toLocaleString()}</p>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <button class="btn btn-outline-secondary btn-sm me-2" onclick="cambiarCantidad(${prod.id}, -1)">-</button>
+                        <span id="cantidad-${prod.id}" class="mx-2 fw-semibold">1</span>
+                        <button class="btn btn-outline-secondary btn-sm ms-2" onclick="cambiarCantidad(${prod.id}, 1)">+</button>
+                    </div>
+
+                    <button class="btn btn-primary mt-auto" onclick="agregarAlCarrito(${prod.id})">
+                        Añadir al carrito
+                    </button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    `
-    )
-    .join("");
+        `;
+
+        contenedor.appendChild(card);
+    });
 }
 
-function cambiarCantidad(id, cambio) {
-  const cantidadElemento = document.getElementById(`cantidad-${id}`);
-  let cantidadActual = parseInt(cantidadElemento.textContent);
-  cantidadActual = Math.max(0, cantidadActual + cambio);
-  cantidadElemento.textContent = cantidadActual;
+function cambiarCantidad(id, valor) {
+    const span = document.getElementById(`cantidad-${id}`);
+    let cantidad = parseInt(span.textContent);
+
+    cantidad += valor;
+    if (cantidad < 1) cantidad = 1;
+
+    span.textContent = cantidad;
 }
 
-generarCards();
+// function agregarAlCarrito(id) {
+//     const cantidad = parseInt(document.getElementById(`cantidad-${id}`).textContent);
+//     console.log("Producto agregado:", id, "Cantidad:", cantidad);
+
+//     // Si querés guardar en localStorage:
+//     // let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+//     // carrito.push({ id, cantidad });
+//     // localStorage.setItem("carrito", JSON.stringify(carrito));
+// }
+
+// ------------------------------
+// Guardar producto en el carrito
+// ------------------------------
+async function agregarAlCarrito(id) {
+    try {
+        const res = await fetch("../data/productos.json");
+        const data = await res.json();
+
+        // Buscar el producto en todas las categorías
+        const todasCategorias = [
+            ...data.celulares,
+            ...data.notebooks,
+            ...data.accesorios
+        ];
+
+        const producto = todasCategorias.find(p => p.id === id);
+        if (!producto) return;
+
+        const cantidad = parseInt(document.getElementById(`cantidad-${id}`).textContent);
+
+        let carrito = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existe = carrito.find(item => item.id === id);
+
+        if (existe) {
+            existe.cantidad += cantidad;
+        } else {
+            carrito.push({
+                id: producto.id,
+                titulo: producto.titulo,
+                precio: producto.precio,
+                imagen: producto.imagen,
+                cantidad: cantidad
+            });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(carrito));
+
+        alert("Producto agregado al carrito");
+
+    } catch (error) {
+        console.error("Error al agregar al carrito:", error);
+    }
+}
+
+
+cargarProductosHome();

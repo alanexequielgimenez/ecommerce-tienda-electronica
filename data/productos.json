@@ -1,0 +1,73 @@
+{
+  "celulares": [
+    {
+      "id": 1,
+      "titulo": "Samsung Galaxy S23",
+      "descripcion": "Pantalla AMOLED 6.1”, Snapdragon 8 Gen 2",
+      "precio": 950000,
+      "imagen": "../images/celularSamsung.avif"
+    },
+    {
+      "id": 2,
+      "titulo": "Motorola Edge 50 Pro",
+      "descripcion": "Carga 125W, cámara 50 MP",
+      "precio": 1000000,
+      "imagen": "../images/motorolaEdge50.webp"
+    },
+    {
+      "id": 3,
+      "titulo": "iPhone 14 Pro",
+      "descripcion": "Chip A16 Bionic, 128GB",
+      "precio": 1500000,
+      "imagen": "../images/iphone14.webp"
+    }
+  ],
+
+  "notebooks": [
+    {
+      "id": 4,
+      "titulo": "Notebook Lenovo",
+      "descripcion": "Intel i5, 16GB RAM, SSD 512GB",
+      "precio": 850000,
+      "imagen": "../images/notebook.webp"
+    },
+    {
+      "id": 5,
+      "titulo": "Asus Rogue Strix",
+      "descripcion": "Ryzen 7, RTX 4060",
+      "precio": 2550000,
+      "imagen": "../images/OtherAsusRogStrix.webp"
+    },
+    {
+      "id": 6,
+      "titulo": "Dell Inspiron",
+      "descripcion": "Intel i7, SSD 1TB",
+      "precio": 1950000,
+      "imagen": "../images/Dellinspiron.webp"
+    }
+  ],
+
+  "accesorios": [
+    {
+      "id": 7,
+      "titulo": "Auriculares Blancos",
+      "descripcion": "Bluetooth 5.3, cancelación de ruido",
+      "precio": 500000,
+      "imagen": "../images/auricularBlanco.webp"
+    },
+    {
+      "id": 8,
+      "titulo": "Teclado Mecánico 75%",
+      "descripcion": "Interruptores mecánicos, RGB",
+      "precio": 250000,
+      "imagen": "../images/tecladoMecanico1.webp"
+    },
+    {
+      "id": 9,
+      "titulo": "Monitor 200hz",
+      "descripcion": "Resolución 1080p, 200hz",
+      "precio": 300000,
+      "imagen": "../images/Monitor200hz.webp"
+    }
+  ]
+}
