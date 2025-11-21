@@ -9,7 +9,10 @@ loginForm.addEventListener("submit", (event) => {
 
   // Validación simple
   if (email === "usuario@correo.com" && password === "1234") {
-    localStorage.setItem("usuarioLogueado", "true");
+
+    // Guardamos el usuario logueado en sessionStorage
+    sessionStorage.setItem("usuarioLogueado", email); 
+
     window.location.href = "../index.html";
   } else {
     alert("Correo o contraseña incorrectos");
